@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 1</title>
+</head>
+<body>
+  <script>
+    /*      
+    1. A un trabajador le pagan según sus horas trabajadas y una tarifa de pago
+    por hora. Si la cantidad de horas trabajadas es mayor a 40 horas, la
+    tarifa se incrementa en un 50% para las horas extras. Escribir un
+    algoritmo que calcule el salario del trabajador dadas las horas trabajadas
+    y la tarifa.    *//*  */
+
+    function calcularSalario(tarifa = undefined, horas = undefined) {
+      if (tarifa === undefined) return console.log(`No se ingreso un valor en tarifa.`);
+      if (horas === undefined) return console.log(`No se ingreso un valor en horas.`);
+      if (typeof(tarifa) !== "number") return console.error(`El dato ${tarifa} no es un número.`);
+      if (typeof(horas) !== "number") return console.error(`El dato ${horas} no es un número.`);
+      if (tarifa <= 0) return console.error("La tarifa debe ser mayor a 0");
+      if (horas <= 0) return console.error("La tarifa debe ser mayor a 0");
+
+
+
+      if (horas >= 40) {
+        tarifa += tarifa * 0.5;
+      }
+
+      console.log(`\nLa tarifa es ${tarifa}.`);
+      console.log(`El salario total es ${tarifa * horas}.`);
+    }
+
+    calcularSalario();
+    calcularSalario(12);
+    calcularSalario("hola", 0);
+    calcularSalario(10, "fol");
+    calcularSalario(0,120);
+    calcularSalario(10,0);
+
+    calcularSalario(100, 20);
+    calcularSalario(100, 40);
+
+  </script>
+</body>
+</html>

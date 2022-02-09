@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejericio </title>
+</head>
+<body>
+  <script>
+    /*     Escribir el algoritmo que lea una hora y que muestre la programación de
+    acuerdo al horario en que se transmite “dibujos animados ” : Si es de 10 a
+    12 horas, “ tele serie ” : si es de 13 a 16 horas, “ novelas repetidas ” :
+    si es de 16 a 18 horas, “dibujos animados ” : si es de 18 a 22 horas,
+    “noticiero” : si es de 22 a 23 horas. */
+
+    function clasificar(hora) {
+      if (hora === undefined) return console.log(`No se ingreso un valor.`);
+      if (typeof(hora) !== "number") return console.error(`El valor ${hora} no es un número.`);
+      if (hora <= -1) return console.error("La hora debe ser mayor a 0");
+      
+      let descuento;
+      (hora <= 10) 
+      ? console.log(`niño`)
+      : (hora <= 14)
+        ? console.log(`púber`)
+        : (hora <= 18)
+          ? console.log(`adolescente`)
+          : (hora <= 25)
+            ? console.log(`joven`)
+            : (hora <= 65)
+              ? console.log(`adulto`)
+              : console.log(`anciano`)
+    }
+  </script>
+</body>
+</html>
