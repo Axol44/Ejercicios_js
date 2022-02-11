@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*     Una tienda se dedica a la venta de computadoras, cada vendedor
+    tiene un sueldo mensual pero además de su sueldo gana una comisión por
+    venta: Si el monto de venta es mayor de 10,000 la comisión será del 15%.
+    Si el monto de venta es mayor o igual a 5,000 y menor de 10,000 la
+    comisión es del 5%. Si el monto de la venta es menor que 5,000 no tiene
+    comisión. Escribir un algoritmo que calcule el sueldo total de cada
+    vendedor */
+    function comprobar(x) {
+    }
+    
+    function calcularSalario(sueldo, monto) {
+      if (sueldo === undefined) return console.log(`No se ingreso un valor.`);
+      if (typeof(sueldo) !== "number") return console.error(`El valor ${sueldo} no es un número.`);
+      if (sueldo <= 0) return console.error("El valor debe ser mayor a 0");
+
+      if (monto === undefined) return console.log(`No se ingreso un valor.`);
+      if (typeof(monto) !== "number") return console.error(`El valor ${monto} no es un número.`);
+      if (monto <= 0) return console.error("El valor debe ser mayor a 0");
+
+      let comisión;
+      (monto < 5000) 
+      ? comisión = 0
+      : (sueldo < 10000)
+        ? comisión = monto *0.05
+        : comisión = monto *0.15
+      
+      console.log(`El suedo total es ${sueldo + comisión}, sueldo: ${sueldo} y comisión: ${comisión}`);
+    }
+
+    calcularSalario();
+    calcularSalario(false);
+    calcularSalario(4000, 2000);
+    calcularSalario(2000, 6000);
+    calcularSalario(2000, 10000);
+    calcularSalario(5000, 10000);
+
+  </script>
+</body>
+</html>
