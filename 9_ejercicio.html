@@ -20,18 +20,19 @@
       if (hora <= -1) return console.error("La hora debe ser mayor a 0");
       
       let descuento;
-      (hora <= 10) 
-      ? console.log(`niño`)
-      : (hora <= 14)
-        ? console.log(`púber`)
-        : (hora <= 18)
-          ? console.log(`adolescente`)
-          : (hora <= 25)
-            ? console.log(`joven`)
-            : (hora <= 65)
-              ? console.log(`adulto`)
-              : console.log(`anciano`)
+      if ((10 <= hora & hora <= 12) || (18 <= hora & hora < 22)) return console.log(`dibujos animados`)
+      if (13 <= hora & hora <= 15) return console.log(`tele serie`)
+      if (16 <= hora & hora < 18) return console.log(`novelas repetidas`)
+      if (22 <= hora & hora <= 23) return console.log(`noticiero`)
     }
+
+    clasificar();
+    clasificar(0);
+    clasificar(12);
+    clasificar(13);
+    clasificar(17);
+    clasificar(19);
+    clasificar(22);
   </script>
 </body>
 </html>
