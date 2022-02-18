@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 20</title>
+</head>
+<body>
+  <script>
+    /*     20. Realizar un algoritmo que permita pedir 50 números naturales y
+    determine e imprima cuántos son pares, impares, positivos y negativos. */
+    function generarNumeros(numero) {
+      let lista = [];
+
+      for (let i = 0; i < numero; i++) {
+        x = Math.round(Math.random() * 2001) -1000
+        lista.push(x);
+      }
+      console.log(lista)
+      return lista;
+    }
+
+    function filtrarYContar(numero) {
+      if (numero === undefined) return console.log(`No se ingreso un valor.`);
+      if (typeof(numero) !== "number") return console.error(`El valor ${numero} no es un número.`);
+      if (numero <= 0) return console.error("La cantidad de números debe ser mayor a 0");
+
+      let lista = generarNumeros(numero);
+      let pares = lista.filter(x => x % 2 == 0);
+      let impares = lista.filter(x => x % 2 == 1);
+      let negativos = lista.filter(x => x < 0);
+      let positivos = lista.filter(x => x >= 0);
+
+      console.log(`      Número pares: ${pares.length} 
+      Número impares: ${impares.length}
+      Número negativos: ${negativos.length} 
+      Número positivos: ${positivos.length}.`)
+    }
+    filtrarYContar();
+    filtrarYContar(50)
+  </script>
+</body>
+</html>

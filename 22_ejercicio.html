@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 22</title>
+</head>
+<body>
+  <script>
+    /*   22. Escribir un algoritmo que calcule la media de 100 números dados e
+    imprima su resultado */
+    function generarNumeros(numero) {
+      let lista = [];
+
+      for (let i = 0; i < numero; i++) {
+        x = Math.round(Math.random() * 1000)
+        lista.push(x);
+      }
+      console.log(lista)
+      return lista;
+    }
+
+    function calcularMedia(lista) {
+      suma = 0
+      lista.forEach(element => {
+        suma += element
+      });
+
+      console.log(suma);
+      return suma / lista.length
+    }
+
+    function main(numero) {
+      media = calcularMedia(generarNumeros(numero));
+
+      console.log(`La media de  ${numero} números aleatorios es: ${media}.`)
+    }
+
+    main(100);
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 16</title>
+</head>
+<body>
+  <script>
+    /*     16. Calcular mediante un algoritmo repetitivo la suma de los N primeros
+    números naturales. */
+
+    function sumatoria(numero) {
+      if (numero === undefined) return console.log(`No se ingreso un valor.`);
+      if (typeof(numero) !== "number") return console.error(`El valor ${numero} no es un número.`);
+      if (numero <= 0) return console.error("La numero debe ser mayor a 0");
+
+      suma = 0;
+      for (let i = 0; i < numero+1; i++) {
+        suma += i;
+      }
+
+      console.log(`La suma es ${suma}.`)
+    }
+
+    sumatoria();
+    sumatoria(false);
+    sumatoria(3);
+    sumatoria(22);
+  </script>
+</body>
+</html>

@@ -14,13 +14,31 @@
     escaleno (cuando sus tres lados son diferentes), o no forman triangulo
     (cada lado tiene que ser menor que la suma de los otros dos). */
 
-    function sonIguales(a, b) {
-      return a == b
+    function determinarTriangulo(a, b, c) {
+      if (a === undefined) return console.log(`No se ingreso un valor.`);
+      if (typeof(a) !== "number") return console.error(`El valor ${a} no es un número.`);
+      //if (a <= -1) return console.error("El lado a debe ser mayor a 0");
+      if (b === undefined) return console.log(`No se ingreso un valor.`);
+      if (typeof(b) !== "number") return console.error(`El valor ${b} no es un número.`);
+      //if (b <= -1) return console.error("El lado b debe ser mayor a 0");
+      if (c === undefined) return console.log(`No se ingreso un valor.`);
+      if (typeof(c) !== "number") return console.error(`El valor ${c} no es un número.`);
+      //if (c <= -1) return console.error("El lado c debe ser mayor a 0");
+      
+
+
+      if (a === b & b === c) return console.log(`Son triangulos equilateros`);
+      if (a === b & b !== c | a !== b  & b === c | a !== b  & a === c ) return console.log(`Son triangulos isósceles`);
     }
 
-    function determinarTriangulo() {
-      if (sonIguales(a, b) & sonIguales(b, c)) return console.log(`Son triangulos equilateros`);
-    }
+    determinarTriangulo();
+    determinarTriangulo(2, "fsd", 4);
+    determinarTriangulo(2, 2, 2);
+    determinarTriangulo(12, 12, 4);
+    determinarTriangulo(12, 4, 12);
+    determinarTriangulo(4, 12, 12);
+
+
 
   </script>
 </body>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 24</title>
+</head>
+<body>
+  <script>
+    /*    24. Escribir un algoritmo que lea varios caracteres, uno a la vez, y que
+    se detenga cuando sea dada alguna de las vocales y la escriba. */
+
+    function leerCaracteres() {
+      let pasa = true;
+
+      const vocales = new Set(["a","e","i", "o", "u","á","é","í", "ó", "ú"]);
+      
+      
+      while(pasa) {
+        letra = prompt("Ingresa una letra.");
+
+/*        if (letra.lenght >= 2) {
+          alert("DEBE SER UN CARÁCTER")
+        } */
+        if (vocales.has(letra.toLowerCase())) {
+          document.write(letra);
+          pasa = false;
+        }
+      }
+    }
+
+    leerCaracteres();
+    
+  </script>
+</body>
+</html>
